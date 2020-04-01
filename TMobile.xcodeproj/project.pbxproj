@@ -118,17 +118,17 @@
 		663083D724341FA70099F908 /* TMobile */ = {
 			isa = PBXGroup;
 			children = (
-				6694CCC224343A0700B9E8F2 /* Views */,
-				6694CCBF243435B600B9E8F2 /* Utils */,
 				663083FE243430120099F908 /* Api */,
-				663083FD24342F7B0099F908 /* Controllers */,
-				663083FA243420060099F908 /* Model */,
 				663083D824341FA70099F908 /* AppDelegate.swift */,
-				663083DA24341FA70099F908 /* SceneDelegate.swift */,
-				663083DE24341FA70099F908 /* Main.storyboard */,
 				663083E124341FA90099F908 /* Assets.xcassets */,
-				663083E324341FA90099F908 /* LaunchScreen.storyboard */,
+				663083FD24342F7B0099F908 /* Controllers */,
 				663083E624341FAA0099F908 /* Info.plist */,
+				663083E324341FA90099F908 /* LaunchScreen.storyboard */,
+				663083DE24341FA70099F908 /* Main.storyboard */,
+				663083FA243420060099F908 /* Model */,
+				663083DA24341FA70099F908 /* SceneDelegate.swift */,
+				6694CCBF243435B600B9E8F2 /* Utils */,
+				6694CCC224343A0700B9E8F2 /* Views */,
 			);
 			path = TMobile;
 			sourceTree = "<group>";

@@ -34,6 +34,13 @@ class Api: NSObject {
         self.sessionManager = Alamofire.SessionManager.default
     }
     
+    
+    /// Get the users from GitHub
+    /// - Parameters:
+    ///   - lastId: the last id seen in the list
+    ///   - successBlock: if the request was successfully the success block will bring
+    ///   a list of users
+    ///   - failBlock: If something's wrong, an error will be thrown
     func getUsers(_ lastId : Int,
                   onSuccess successBlock : @escaping APIRequestCompleteSuccessClosure,
                   onFailure failBlock : @escaping APIRequestCompleteFailureClosure) {
@@ -53,6 +60,13 @@ class Api: NSObject {
         }
     }
     
+    
+    /// get a single user from GitHub
+    /// - Parameters:
+    ///   - user: the login's id user
+    ///   - successBlock: if the request was successfully the success block will bring
+    ///   the user information
+    ///   - failBlock: If something's wrong, an error will be thrown
     func getUser(_ user : String,
                  onSuccess successBlock : @escaping APIRequestCompleteSuccessClosure,
                  onFailure failBlock : @escaping APIRequestCompleteFailureClosure) {
@@ -72,6 +86,13 @@ class Api: NSObject {
         }
     }
     
+    
+    /// For every single user, we can get all his repositories
+    /// - Parameters:
+    ///   - path: The complete path for the repos
+    ///   - successBlock: if the request was successfully the success block will bring
+    ///   a list of repositories that belongs to user
+    ///   - failureBlock: If something's wrong, an error will be thrown
     func getRepos(_ path : String,
                   onSuccess successBlock : @escaping APIRequestCompleteSuccessClosure,
                   onFailure failureBlock : @escaping APIRequestCompleteFailureClosure) {
