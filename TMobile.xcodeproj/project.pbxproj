@@ -79,6 +79,7 @@
 		663083D724341FA70099F908 /* TMobile */ = {
 			isa = PBXGroup;
 			children = (
+				663083FA243420060099F908 /* Model */,
 				663083D824341FA70099F908 /* AppDelegate.swift */,
 				663083DA24341FA70099F908 /* SceneDelegate.swift */,
 				663083DC24341FA70099F908 /* ViewController.swift */,
@@ -97,6 +98,13 @@
 				663083F124341FAA0099F908 /* Info.plist */,
 			);
 			path = TMobileTests;
+			sourceTree = "<group>";
+		};
+		663083FA243420060099F908 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
