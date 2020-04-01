@@ -8,6 +8,7 @@ target 'TMobile' do
   pod 'Alamofire', '~> 4.7'
   pod 'AlamofireObjectMapper', '~> 5.2'
   pod 'Nuke', '~> 8.0'
+  pod 'JGProgressHUD'
 
   # Pods for TMobile
 

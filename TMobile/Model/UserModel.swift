@@ -9,7 +9,7 @@
 import UIKit
 import ObjectMapper
 
-class UserModel: Mappable, Codable {
+class UserModel: Mappable {
     
     var login             : String?
     var id                : Int = 1
@@ -41,8 +41,10 @@ class UserModel: Mappable, Codable {
     var publicGist        : Int = 0
     var followers         : Int = 0
     var following         : Int = 0
-    var createdAt         : Date?
-    var updatedAt         : Date?
+    var createdAt         : String?
+    var updatedAt         : String?
+    
+    let dFormat = DateFormatter(withFormat: "yyyy-MM-dd'T'HH:mm:ss", locale: "en_US")
     
     required init?(map: Map) {
     }
@@ -77,8 +79,8 @@ class UserModel: Mappable, Codable {
         publicGist        <- map["public_gist"]
         followers         <- map["followers"]
         following         <- map["following"]
-        createdAt         <- (map["created_at"], DateTransform())
-        updatedAt         <- (map["updated_at"], DateTransform())
+        createdAt         <- map["created_at"]
+        updatedAt         <- map["updated_at"]
     }
     
     func describing() -> String {

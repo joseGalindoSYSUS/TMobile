@@ -9,7 +9,7 @@
 import UIKit
 import Nuke
 
-class UserDetailViewController: UIViewController {
+class UserDetailViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UISearchResultsUpdating {
     
     // UI
     @IBOutlet weak var avatarImg: UIImageView!
@@ -20,17 +20,30 @@ class UserDetailViewController: UIViewController {
     @IBOutlet weak var followerLbl: UILabel!
     @IBOutlet weak var followingLbl: UILabel!
     @IBOutlet weak var bioLbl: UILabel!
-    
-    @IBOutlet weak var mSearchBar: UISearchBar!
     @IBOutlet weak var mTableView: UITableView!
+    
+    var searchController = UISearchController()
     
     //
     var userSelected : UserModel?
+    lazy var repos = [RepositoryModel]()
+    lazy var filterRepos = [RepositoryModel]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         self.title = "GitHub Searcher"
+        
+        searchController = ({
+            let controller = UISearchController(searchResultsController: nil)
+            controller.searchResultsUpdater = self
+            controller.obscuresBackgroundDuringPresentation = false
+            controller.searchBar.sizeToFit()
+            
+            self.mTableView.tableHeaderView = controller.searchBar
+            
+            return controller
+        })()
         self.configureView()
     }
     
@@ -47,22 +60,67 @@ class UserDetailViewController: UIViewController {
         followerLbl.text = "\(userSelected!.followers) Followers"
         followingLbl.text = "Following \(userSelected!.following)"
         
-        
         if userSelected!.bio == nil {
             bioLbl.isHidden = true
         } else {
             bioLbl.text = userSelected!.bio
         }
+        
+        mTableView.dataSource = self
+        mTableView.delegate = self
+        let mNib = UINib.init(nibName: "TVCRepos", bundle: nil)
+        mTableView.register(mNib, forCellReuseIdentifier: TVCRepos.REUSE_IDENTIFIER)
+        
+        Api.shared.getRepos(userSelected!.reposUrl!, onSuccess: { (succs) in
+            guard let _ = succs else {
+                return
+            }
+            self.repos.append(contentsOf: (succs as! [RepositoryModel]))
+            self.mTableView.reloadData()
+        }) { (merror) in
+            
+        }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    // MARK: -
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        if searchController.isActive {
+            return filterRepos.count
+        } else {
+            return repos.count
+        }
     }
-    */
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TVCRepos.REUSE_IDENTIFIER, for: indexPath) as! TVCRepos
+        
+        if searchController.isActive {
+            cell.configureCell(filterRepos[indexPath.row])
+        } else {
+            cell.configureCell(repos[indexPath.row])
+        }
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var repoSlctd : RepositoryModel
+        if searchController.isActive {
+            repoSlctd = filterRepos[indexPath.row]
+        } else {
+            repoSlctd = repos[indexPath.row]
+        }
+        let repoUrl = URL(string: repoSlctd.htmlRepo!)
+        UIApplication.shared.open(repoUrl!, options: [:], completionHandler: nil)
+    }
+    
+    // MARK: -
+    func updateSearchResults(for searchController: UISearchController) {
+        filterRepos.removeAll(keepingCapacity: false)
+        filterRepos.append(contentsOf: repos.filter { (repo) -> Bool in
+            return repo.name!.contains(searchController.searchBar.text!.lowercased())
+        })
+        mTableView.reloadData()
+    }
 
 }

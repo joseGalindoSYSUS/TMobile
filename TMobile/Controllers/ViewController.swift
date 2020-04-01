@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -15,8 +16,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     var searchController = UISearchController()
     
     //
-    var usersDwnld = [UserModel]()
-    var filteredUsers = [UserModel]()
+    lazy var usersDwnld = [UserModel]()
+    lazy var filteredUsers = [UserModel]()
+    var lastId = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,16 +42,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             return controller
         })()
         
-        Api.shared.getUsers(0, onSuccess: { (succs) in
+        getExtraUsers()
+    }
+
+    
+    /// Get the user 
+    private func getExtraUsers() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view, animated: true)
+        Api.shared.getUsers(lastId, onSuccess: { (succs) in
             if succs != nil {
                 self.usersDwnld.append(contentsOf: (succs as! [UserModel]))
                 self.mTableView.reloadData()
             }
+            hud.dismiss()
         }) { (mError) in
-            // Do something
+            self.showErrorMessage("An Error occurred, please try later")
+            hud.dismiss()
         }
     }
-
     
     // MARK :- UITableViewDelegate & DataSource
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -78,18 +90,34 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        var userM : UserModel
         if searchController.isActive {
+            searchController.setEditing(false, animated: false)
             searchController.dismiss(animated: false, completion: nil)
+            userM = filteredUsers[indexPath.row]
+        } else {
+            userM = usersDwnld[indexPath.row]
         }
         
-        // loading
-        Api.shared.getUser(usersDwnld[indexPath.row].login!, onSuccess: { (succsRes) in
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view, animated: true)
+        Api.shared.getUser(userM.login!, onSuccess: { (succsRes) in
             guard let _ = succsRes else {
                 return
             }
+            hud.dismiss()
             self.performSegue(withIdentifier: "showDetail", sender: succsRes)
         }) { (mError) in
+            hud.dismiss()
             self.showErrorMessage("An Error occurred, please try later")
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if indexPath.row + 1 == usersDwnld.count {
+            lastId = usersDwnld.last!.id
+            getExtraUsers()
         }
     }
     

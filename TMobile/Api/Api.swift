@@ -71,5 +71,24 @@ class Api: NSObject {
                 }
         }
     }
+    
+    func getRepos(_ path : String,
+                  onSuccess successBlock : @escaping APIRequestCompleteSuccessClosure,
+                  onFailure failureBlock : @escaping APIRequestCompleteFailureClosure) {
+        let mUrl = URL(string: path)!
+        self.sessionManager.request(mUrl, method: .get, parameters: nil, encoding: URLEncoding.default, headers: nil)
+            .validate(statusCode: 200..<300)
+            .validate(contentType: ["application/json"])
+            .responseArray { (response : DataResponse<[RepositoryModel]>) in
+                switch response.result {
+                case .success:
+                    successBlock(response.result.value)
+                    break
+                case .failure(let mError):
+                    failureBlock(mError)
+                    break
+                }
+        }
+    }
 
 }
