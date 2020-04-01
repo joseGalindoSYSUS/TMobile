@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		16730CCD899EDF82FAFC3F20 /* Pods_TMobile.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3281FD08A9905D593BFD4EA2 /* Pods_TMobile.framework */; };
 		663083D924341FA70099F908 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083D824341FA70099F908 /* AppDelegate.swift */; };
 		663083DB24341FA70099F908 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083DA24341FA70099F908 /* SceneDelegate.swift */; };
 		663083DD24341FA70099F908 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083DC24341FA70099F908 /* ViewController.swift */; };
@@ -14,6 +15,14 @@
 		663083E224341FA90099F908 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 663083E124341FA90099F908 /* Assets.xcassets */; };
 		663083E524341FA90099F908 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 663083E324341FA90099F908 /* LaunchScreen.storyboard */; };
 		663083F024341FAA0099F908 /* TMobileTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083EF24341FAA0099F908 /* TMobileTests.swift */; };
+		663083FC2434283F0099F908 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083FB2434283F0099F908 /* UserModel.swift */; };
+		66308400243430290099F908 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = 663083FF243430290099F908 /* Api.swift */; };
+		6694CCBC243434B900B9E8F2 /* UserDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CCBB243434B900B9E8F2 /* UserDetailViewController.swift */; };
+		6694CCC1243435C600B9E8F2 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CCC0243435C600B9E8F2 /* Constants.swift */; };
+		6694CCC524343A5700B9E8F2 /* TVCSingleRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CCC324343A5700B9E8F2 /* TVCSingleRow.swift */; };
+		6694CCC624343A5700B9E8F2 /* TVCSingleRow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6694CCC424343A5700B9E8F2 /* TVCSingleRow.xib */; };
+		6694CCC82434841100B9E8F2 /* Decorator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6694CCC72434841100B9E8F2 /* Decorator.swift */; };
+		67AF06572AD247A6ED8DFD5E /* Pods_TMobileTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19B44611A4EFB9321F722636 /* Pods_TMobileTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +36,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19B44611A4EFB9321F722636 /* Pods_TMobileTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMobileTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3281FD08A9905D593BFD4EA2 /* Pods_TMobile.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TMobile.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53CA29AC9CB0F18C218C6659 /* Pods-TMobileTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMobileTests.debug.xcconfig"; path = "Target Support Files/Pods-TMobileTests/Pods-TMobileTests.debug.xcconfig"; sourceTree = "<group>"; };
 		663083D524341FA70099F908 /* TMobile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TMobile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		663083D824341FA70099F908 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		663083DA24341FA70099F908 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +50,16 @@
 		663083EB24341FAA0099F908 /* TMobileTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TMobileTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		663083EF24341FAA0099F908 /* TMobileTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TMobileTests.swift; sourceTree = "<group>"; };
 		663083F124341FAA0099F908 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		663083FB2434283F0099F908 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		663083FF243430290099F908 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		6694CCBB243434B900B9E8F2 /* UserDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailViewController.swift; sourceTree = "<group>"; };
+		6694CCC0243435C600B9E8F2 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		6694CCC324343A5700B9E8F2 /* TVCSingleRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVCSingleRow.swift; sourceTree = "<group>"; };
+		6694CCC424343A5700B9E8F2 /* TVCSingleRow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TVCSingleRow.xib; sourceTree = "<group>"; };
+		6694CCC72434841100B9E8F2 /* Decorator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decorator.swift; sourceTree = "<group>"; };
+		7D9478CBE9B9735A576CFD7D /* Pods-TMobileTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMobileTests.release.xcconfig"; path = "Target Support Files/Pods-TMobileTests/Pods-TMobileTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D462D3D2E737AF464962046 /* Pods-TMobile.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMobile.release.xcconfig"; path = "Target Support Files/Pods-TMobile/Pods-TMobile.release.xcconfig"; sourceTree = "<group>"; };
+		DAF1B5DF1326A0946FDE2AD9 /* Pods-TMobile.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TMobile.debug.xcconfig"; path = "Target Support Files/Pods-TMobile/Pods-TMobile.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16730CCD899EDF82FAFC3F20 /* Pods_TMobile.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +75,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67AF06572AD247A6ED8DFD5E /* Pods_TMobileTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		202EACA14A5C7BB939FEA7D2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DAF1B5DF1326A0946FDE2AD9 /* Pods-TMobile.debug.xcconfig */,
+				8D462D3D2E737AF464962046 /* Pods-TMobile.release.xcconfig */,
+				53CA29AC9CB0F18C218C6659 /* Pods-TMobileTests.debug.xcconfig */,
+				7D9478CBE9B9735A576CFD7D /* Pods-TMobileTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		663083CC24341FA70099F908 = {
 			isa = PBXGroup;
 			children = (
 				663083D724341FA70099F908 /* TMobile */,
 				663083EE24341FAA0099F908 /* TMobileTests */,
 				663083D624341FA70099F908 /* Products */,
+				202EACA14A5C7BB939FEA7D2 /* Pods */,
+				A5228C9D2AB391376B320351 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,10 +116,13 @@
 		663083D724341FA70099F908 /* TMobile */ = {
 			isa = PBXGroup;
 			children = (
+				6694CCC224343A0700B9E8F2 /* Views */,
+				6694CCBF243435B600B9E8F2 /* Utils */,
+				663083FE243430120099F908 /* Api */,
+				663083FD24342F7B0099F908 /* Controllers */,
 				663083FA243420060099F908 /* Model */,
 				663083D824341FA70099F908 /* AppDelegate.swift */,
 				663083DA24341FA70099F908 /* SceneDelegate.swift */,
-				663083DC24341FA70099F908 /* ViewController.swift */,
 				663083DE24341FA70099F908 /* Main.storyboard */,
 				663083E124341FA90099F908 /* Assets.xcassets */,
 				663083E324341FA90099F908 /* LaunchScreen.storyboard */,
@@ -103,8 +143,53 @@
 		663083FA243420060099F908 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				663083FB2434283F0099F908 /* UserModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		663083FD24342F7B0099F908 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				663083DC24341FA70099F908 /* ViewController.swift */,
+				6694CCBB243434B900B9E8F2 /* UserDetailViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		663083FE243430120099F908 /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				663083FF243430290099F908 /* Api.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		6694CCBF243435B600B9E8F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				6694CCC0243435C600B9E8F2 /* Constants.swift */,
+				6694CCC72434841100B9E8F2 /* Decorator.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		6694CCC224343A0700B9E8F2 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				6694CCC324343A5700B9E8F2 /* TVCSingleRow.swift */,
+				6694CCC424343A5700B9E8F2 /* TVCSingleRow.xib */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		A5228C9D2AB391376B320351 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3281FD08A9905D593BFD4EA2 /* Pods_TMobile.framework */,
+				19B44611A4EFB9321F722636 /* Pods_TMobileTests.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -114,9 +199,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 663083F424341FAA0099F908 /* Build configuration list for PBXNativeTarget "TMobile" */;
 			buildPhases = (
+				3F2C8B517FF6656DE07AE021 /* [CP] Check Pods Manifest.lock */,
 				663083D124341FA70099F908 /* Sources */,
 				663083D224341FA70099F908 /* Frameworks */,
 				663083D324341FA70099F908 /* Resources */,
+				E9842D2B09CA91DD4BE055ED /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -131,6 +218,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 663083F724341FAA0099F908 /* Build configuration list for PBXNativeTarget "TMobileTests" */;
 			buildPhases = (
+				0140FA17D6EE4A5999AAA571 /* [CP] Check Pods Manifest.lock */,
 				663083E724341FAA0099F908 /* Sources */,
 				663083E824341FAA0099F908 /* Frameworks */,
 				663083E924341FAA0099F908 /* Resources */,
@@ -188,6 +276,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6694CCC624343A5700B9E8F2 /* TVCSingleRow.xib in Resources */,
 				663083E524341FA90099F908 /* LaunchScreen.storyboard in Resources */,
 				663083E224341FA90099F908 /* Assets.xcassets in Resources */,
 				663083E024341FA70099F908 /* Main.storyboard in Resources */,
@@ -203,6 +292,70 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0140FA17D6EE4A5999AAA571 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TMobileTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3F2C8B517FF6656DE07AE021 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TMobile-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E9842D2B09CA91DD4BE055ED /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMobile/Pods-TMobile-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TMobile/Pods-TMobile-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TMobile/Pods-TMobile-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		663083D124341FA70099F908 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -210,7 +363,13 @@
 			files = (
 				663083DD24341FA70099F908 /* ViewController.swift in Sources */,
 				663083D924341FA70099F908 /* AppDelegate.swift in Sources */,
+				6694CCBC243434B900B9E8F2 /* UserDetailViewController.swift in Sources */,
+				663083FC2434283F0099F908 /* UserModel.swift in Sources */,
+				6694CCC524343A5700B9E8F2 /* TVCSingleRow.swift in Sources */,
+				6694CCC82434841100B9E8F2 /* Decorator.swift in Sources */,
+				66308400243430290099F908 /* Api.swift in Sources */,
 				663083DB24341FA70099F908 /* SceneDelegate.swift in Sources */,
+				6694CCC1243435C600B9E8F2 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -368,6 +527,7 @@
 		};
 		663083F524341FAA0099F908 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DAF1B5DF1326A0946FDE2AD9 /* Pods-TMobile.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -386,6 +546,7 @@
 		};
 		663083F624341FAA0099F908 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D462D3D2E737AF464962046 /* Pods-TMobile.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -404,6 +565,7 @@
 		};
 		663083F824341FAA0099F908 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 53CA29AC9CB0F18C218C6659 /* Pods-TMobileTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -426,6 +588,7 @@
 		};
 		663083F924341FAA0099F908 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7D9478CBE9B9735A576CFD7D /* Pods-TMobileTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
